@@ -3,7 +3,7 @@ import {Router} from 'express';
 const router = Router();
 
 router.get('/', async(req,res)=>{
-    res.send('mi hoja de rutas')
+    res.send('esta ruta si anda ')
 })
 
 export default router;

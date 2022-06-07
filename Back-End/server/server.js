@@ -1,5 +1,7 @@
 const express = require ('express');
 const morgan = require("morgan");
+const path = require('path')
+const publicPath = path.join(process.cwd(), '/Back-End/public')
 import hojaRuta from '../routes/route'
 import apiZapas from '../apiREST/zapatillas'
 
@@ -10,12 +12,11 @@ app.use('/rutas', hojaRuta)
 app.use('/zapatillas', apiZapas)
 
 app.use(morgan("dev"));
-app.use(express.static(__dirname + "./public"));
+// app.use(express.static(__dirname + "/public"));
+// app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-
-
+// app.use(express.static(process.cwd() + '\\public'));
+app.use(express.static(publicPath))
 
 
 

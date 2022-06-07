@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Handlebars</title>
 </head>
 <body>
-    <h1>Holaa</h1>
+    <!-- Implementar Handlebars desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous"></script>
+
+    <span></span><!--Donde metemos el resultado-->
+    <script>
+        const formularioCarga = `
+        <h1>Carga de productos</h1>
+            <ul>
+                <li>{{titulo}}</li>
+                <li>{{descripcion}}</li>
+                <li>{{precio}}</li>
+                <li>{{thumbnail}}</li>
+            </ul>
+        `
+        const template = Handlebars.compile(formularioCarga);//compila la plantilla, no entiendo eso
+        const producto = {
+            titulo: 'airforce',
+            descripcion: 'blancas',
+            precio: 30000,
+            thumbnail: 'url foto'
+        }
+        const html = template(producto); //genera html
+        document.querySelector('span').innerHTML = html; //muestra el resultado en la vista
+    </script>
+
 </body>
 </html>
