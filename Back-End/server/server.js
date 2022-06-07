@@ -1,12 +1,16 @@
 const express = require ('express');
-import morgan from 'morgan';
+const morgan = require("morgan");
 import hojaRuta from '../routes/route'
+import apiZapas from '../apiREST/zapatillas'
 
 
 const app = express();
 
 app.use('/rutas', hojaRuta)
+app.use('/zapatillas', apiZapas)
 
+app.use(morgan("dev"));
+app.use(express.static(__dirname + "./public"));
 
 
 
