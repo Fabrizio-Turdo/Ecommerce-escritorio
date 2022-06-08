@@ -8,14 +8,11 @@ import apiZapas from '../apiREST/zapatillas'
 
 const app = express();
 
+//diferencias entre estas dos ?
 app.use('/rutas', hojaRuta)
 app.use('/zapatillas', apiZapas)
 
 app.use(morgan("dev"));
-// app.use(express.static(__dirname + "/public"));
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use(express.static(process.cwd() + '\\public'));
 app.use(express.static(publicPath))
 
 

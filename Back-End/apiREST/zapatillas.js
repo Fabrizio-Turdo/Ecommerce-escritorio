@@ -13,5 +13,8 @@ router.post('/', async(req,res)=>{
     res.json({mensaje:'Zapatilla agregada'})
 
 })
+router.put('/', async(req,res)=>{
+
+})
 
 export default router;
