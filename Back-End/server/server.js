@@ -2,15 +2,17 @@ const express = require ('express');
 const morgan = require("morgan");
 const path = require('path')
 const publicPath = path.join(process.cwd(), '/Back-End/public')
-import hojaRuta from '../routes/route'
+// import hojaRuta from '../routes/route'
 import apiZapas from '../apiREST/zapatillas'
+import apiCart from '../apiREST/carrito'
 
 
 const app = express();
 
-//diferencias entre estas dos ?
-app.use('/rutas', hojaRuta)
-app.use('/zapatillas', apiZapas)
+
+// app.use('/rutas', hojaRuta);
+app.use('/zapatillas', apiZapas);
+app.use('/carrito', apiCart);
 
 app.use(morgan("dev"));
 app.use(express.static(publicPath))
